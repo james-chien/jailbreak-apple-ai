@@ -4,6 +4,8 @@ A macOS helper for inspecting and updating Apple eligibility plist values relate
 
 The script provides a safer command-driven workflow with SIP checks, Full Disk Access checks, timestamped backups, per-command confirmation, status decoding, and restore support.
 
+中文文档: [README.CN.md](README.CN.md)
+
 ## Warning
 
 This tool edits protected macOS system plist files. Use it only if you understand the risk. Backups are created automatically before write operations, but you should still review each prompt carefully.
@@ -45,6 +47,10 @@ Command summary:
 
 The `status` command displays both the raw number and its meaning.
 
+## Availability Notes
+
+Apple Intelligence availability depends on device model, OS version, language, and region. Current Apple guidance is broader than early summaries: it supports multiple languages, EU availability has expanded on supported OS versions, and supported hardware includes Apple silicon Macs. China mainland remains restricted, including supported devices purchased there and some devices used there with an Apple Account region set to China mainland.
+
 ## Testing
 
 Run the local test harness:
@@ -62,4 +68,3 @@ Thanks to [Kyle-Ye](https://github.com/Kyle-Ye) for providing kernel information
 ## License
 
 See [LICENSE](LICENSE).
-
