@@ -1,0 +1,65 @@
+# jailbreak-apple-ai
+
+A macOS helper for inspecting and updating Apple eligibility plist values related to Apple Intelligence features.
+
+The script provides a safer command-driven workflow with SIP checks, Full Disk Access checks, timestamped backups, per-command confirmation, status decoding, and restore support.
+
+## Warning
+
+This tool edits protected macOS system plist files. Use it only if you understand the risk. Backups are created automatically before write operations, but you should still review each prompt carefully.
+
+Before applying or restoring changes, boot into Recovery Mode and run:
+
+```bash
+csrutil disable
+```
+
+After returning to macOS, run the script from Terminal. Terminal must also have Full Disk Access for `/private/var/db/os_eligibility`.
+
+## Commands
+
+```bash
+./jailbreak.sh help
+./jailbreak.sh check
+./jailbreak.sh status
+./jailbreak.sh apply
+./jailbreak.sh backups
+./jailbreak.sh restore latest
+```
+
+Command summary:
+
+- `help`: list available commands.
+- `check`: verify macOS, required tools, SIP status, directory access, and plist validity.
+- `status`: read current managed plist values.
+- `apply`: back up plist files, then prompt before each `PlistBuddy` change.
+- `backups`: list available backup directories.
+- `restore [latest|DIR]`: restore plist files from a backup.
+
+## Eligibility Values
+
+`os_eligibility_answer_t` records determined eligibility:
+
+- `2`: ineligible
+- `4`: eligible
+
+The `status` command displays both the raw number and its meaning.
+
+## Testing
+
+Run the local test harness:
+
+```bash
+./test_jailbreak.sh
+```
+
+The tests stub macOS-specific commands and use temporary files, so they do not touch real system plist files.
+
+## Acknowledgements
+
+Thanks to [Kyle-Ye](https://github.com/Kyle-Ye) for providing kernel information that helped inform this work.
+
+## License
+
+See [LICENSE](LICENSE).
+
