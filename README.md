@@ -1,8 +1,8 @@
 # jailbreak-apple-ai
 
-A macOS helper for inspecting and updating Apple eligibility plist values related to Apple Intelligence features.
+`jailbreak-apple-ai` modifies macOS eligibility records so a device can be treated as eligible for Apple Intelligence features that may otherwise be unavailable because of region, language, device, or account restrictions.
 
-The script provides a safer command-driven workflow with SIP checks, Full Disk Access checks, timestamped backups, per-command confirmation, status decoding, and restore support.
+The script focuses on making that system modification more controlled: it can inspect the current eligibility values, create backups, prompt before each `PlistBuddy` write, restore previous plist files, and explain the raw eligibility numbers.
 
 中文文档: [README.CN.md](README.CN.md)
 
